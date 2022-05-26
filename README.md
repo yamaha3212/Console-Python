@@ -1,5 +1,3 @@
 # Console-Python
-Консольный питон, ездит только на WASD (пока что).
-По ТЗ - из std можно использовать только swap и cout, фактически это код на C с небольшими исключениями.
-СMake нет, т.к. IDE - VS.
-Буду рад обсёру кода публично или в личку.
+Input only WASD (temporary)
+Only functional programming, without std (expect cout and swap)
