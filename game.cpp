@@ -8,18 +8,18 @@
 
 int tailRow=1, tailCol=1;
 
-int headRow = 1; // БНГЛНФМН, ЯРНХР СДЮКХРЭ ХКХ ГЮЛЕМХРЭ
-int headCol = snakeSize; // щрн днкфмн ашрэ б snake. ме напюанрюмю дкъ яюиг = 1
+int headRow = 1; // О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫, О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+int headCol = snakeSize; // О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫ snake. О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ = 1
 
 bool gameOver = false;
-int timeout = 150;
+int timeout = 50;
 
 void snakeMov(char** gameField, int direction) {
     switch (direction)
     {
-    case RIGHT: { // оепелеыемхе глеийх
-        if (actions[snakeSize - 1] != LEFT) { // еякх опедшдсыее мюопбкемхе ме ашкн опнрхбнонкнфмшл
-            if (gameField[headRow][headCol + 1] == 'F') { // еякх мюрймскяъ мю едс
+    case RIGHT: { // О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
+        if (actions[snakeSize - 1] != LEFT) { // О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+            if (gameField[headRow][headCol + 1] == 'F') { // О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫ О©╫О©╫О©╫
                 std::swap(gameField[headRow][headCol], gameField[headRow][headCol + 1]);
                 gameField[headRow][headCol] = tailSymbol;
                 ++headCol;
@@ -28,16 +28,16 @@ void snakeMov(char** gameField, int direction) {
                 addFood(gameField, cols, rows);
                 break;
             }
-            for (int i = 0; i < snakeSize - 1; ++i) { // рейсыюъ йнлюмдю днаюбкъеряъ б йнмеж нвепедх йнлюмд
+            for (int i = 0; i < snakeSize - 1; ++i) { // О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
                 actions[i] = actions[i + 1];
             }
             actions[snakeSize - 1] = RIGHT;
-            for (int i = 0; i < snakeSize - 2; ++i) { // рейсыюъ йнлюмдю днаюбкъеряъ б йнмеж нвепедх йнлюмд
+            for (int i = 0; i < snakeSize - 2; ++i) { // О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
                 queue[i] = queue[i + 1];
             }
             queue[snakeSize - 2] = left;
 
-            if (gameField[headRow][headCol + 1] == borderSymbol) { // еякх яопюбю цпюмхжю онкъ
+            if (gameField[headRow][headCol + 1] == borderSymbol) { // О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
                
                 std::swap(gameField[headRow][headCol], gameField[headRow][1]);
                 std::swap(gameField[headRow][headCol], gameField[tailRow][tailCol]);
@@ -61,7 +61,7 @@ void snakeMov(char** gameField, int direction) {
             }
     
         }
-        else { snakeMov(gameField, LEFT); break; } // БШГНБЕРЯЪ, ЕЯКХ АСДЕР МЮФЮРЮ ОПНРХБНОНКНФМЮЪ ДБХФЕМХЧ ЙМНОЙЮ
+        else { snakeMov(gameField, LEFT); break; } // О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫, О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
     }
     case LEFT: {
         if (actions[snakeSize - 1] != RIGHT) {
@@ -79,7 +79,7 @@ void snakeMov(char** gameField, int direction) {
             }
             actions[snakeSize - 1] = LEFT;
            
-            for (int i = 0; i < snakeSize - 2; ++i) { // рейсыюъ йнлюмдю днаюбкъеряъ б йнмеж нвепедх йнлюмд
+            for (int i = 0; i < snakeSize - 2; ++i) { // О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
                 queue[i] = queue[i + 1];
             }
             queue[snakeSize - 2] = right;
@@ -125,7 +125,7 @@ void snakeMov(char** gameField, int direction) {
             }
             actions[snakeSize - 1] = DOWN;
 
-            for (int i = 0; i < snakeSize - 2; ++i) { // рейсыюъ йнлюмдю днаюбкъеряъ б йнмеж нвепедх йнлюмд
+            for (int i = 0; i < snakeSize - 2; ++i) { // О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
                 queue[i] = queue[i + 1];
             }
             queue[snakeSize - 2] = up;
@@ -171,7 +171,7 @@ void snakeMov(char** gameField, int direction) {
             }
             actions[snakeSize - 1] = UP;
         
-            for (int i = 0; i < snakeSize - 2; ++i) { // рейсыюъ йнлюмдю днаюбкъеряъ б йнмеж нвепедх йнлюмд
+            for (int i = 0; i < snakeSize - 2; ++i) { // О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
                 queue[i] = queue[i + 1];
             }
             queue[snakeSize - 2] = down;
@@ -209,32 +209,14 @@ void snakeMov(char** gameField, int direction) {
 
 void afterGame() {
     system("cls");
-    for (size_t i = 0; i < 15; i++)
-    {
-        std::cout << std::endl;
+    for (size_t i = 0; i < 55; i++) {
+        std::cout << "G a M e O v E r ";
+        Sleep(220);
+        setCursorPosition(0, 0);
+        std::cout << "g A m E o V e R ";
+        Sleep(220);
+        setCursorPosition(0, 0);
     }
-    std::cout << "                                                     ";
-    std::cout << "G A M E O V E R ";
-    Sleep(700);
-    system("cls");
-    Sleep(700);
-    for (size_t i = 0; i < 15; i++)
-    {
-        std::cout << std::endl;
-    }
-    std::cout << "                                                     ";
-    std::cout << "G A M E O V E R ";
-    Sleep(700);
-    system("cls");
-    Sleep(700);
-    for (size_t i = 0; i < 15; i++)
-    {
-        std::cout << std::endl;
-    }
-    std::cout << "                                                     ";
-    std::cout << "G A M E O V E R ";
-    Sleep(700);
-    system("cls");
 }
 
 void startGame(int delay) {
@@ -244,11 +226,17 @@ void startGame(int delay) {
     int direction = RIGHT;
     while ( !gameOver ) {
         displayCanvas(gameField, cols, rows);
-        if (_kbhit())
+        DWORD startTime = GetTickCount64();
+        DWORD finishTime = startTime + delay;
+        while (GetTickCount64() < finishTime)
         {
-            int previousDirection = direction;
-            direction = _getch();
-            direction = (direction == RIGHT || direction == LEFT || direction == UP || direction == DOWN) ? direction : previousDirection; // ВРНАШ МЕ СВХРШБЮРЭ МЮФЮРШИ ЛСЯНП
+            Sleep(10);
+            if (_kbhit())
+            {
+                int previousDirection = direction;
+                direction = _getch();
+                direction = (direction == RIGHT || direction == LEFT || direction == UP || direction == DOWN) ? direction : previousDirection;
+            }
         }
         snakeMov(gameField, direction);
         Sleep(delay);
